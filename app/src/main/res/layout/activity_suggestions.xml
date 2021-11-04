@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Suggestions">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="260dp"
+        android:layout_height="52dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        android:textSize="60sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="235dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="32dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical|left"
+            app:srcCompat="@drawable/ic_launcher_background"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="198dp" />
+
+        <TextView
+            android:id="@+id/tvParticipantsView"
+            android:layout_width="223dp"
+            android:layout_height="66dp"
+
+            android:layout_gravity="center_vertical|center"
+            android:text="@string/participants"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <TextView
+            android:id="@+id/tvParticipantsQuantity"
+            android:layout_width="88dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center_vertical|right"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="336dp" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="137dp"
+        android:layout_marginTop="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <ImageView
+            android:layout_width="65dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_vertical|left"
+            app:srcCompat="@drawable/ic_launcher_background"
+            tools:layout_editor_absoluteX="63dp"
+            tools:layout_editor_absoluteY="198dp" />
+
+        <TextView
+            android:id="@+id/tvParticipantsView2"
+            android:layout_width="223dp"
+            android:layout_height="66dp"
+
+            android:layout_gravity="center_vertical|center"
+            android:text="@string/participants"
+            tools:layout_editor_absoluteX="161dp"
+            tools:layout_editor_absoluteY="70dp" />
+
+        <TextView
+            android:id="@+id/tvParticipantsQuantity2"
+            android:layout_width="88dp"
+            android:layout_height="29dp"
+            android:layout_gravity="center_vertical|right"
+            tools:layout_editor_absoluteX="178dp"
+            tools:layout_editor_absoluteY="336dp" />
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btTryAnother"
+        android:layout_width="149dp"
+        android:layout_height="41dp"
+        android:text="@string/tryanother"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

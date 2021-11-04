@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">integrador_Android</string>
+    <string name="title">Not Bored</string>
+    <string name="participants">Participants</string>
+    <string name="start">Start</string>
+    <string name="termsconditions">Terms and conditions</string>
+    <string name="participantsNumber">participantsNumber</string>
+    <string name="activitiesTitle">Activities</string>
+    <string name="tryanother">Try Another</string>
+    <string name="tvActivityCategory">tvActivityCategory</string>
+    <string name="hardCodedCategory">hardCodedCategory</string>
+
+</resources>
