@@ -8,7 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class ActivitiesAdapter(private var activitiesList: List<String>, val aux:Activities):RecyclerView.Adapter<ActivitiesViewHolder>() {
+class ActivitiesAdapter(private var activitiesList: List<String>, val activitiesInstance: Activities):RecyclerView.Adapter<ActivitiesViewHolder>() {
 /*
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivitiesViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
@@ -20,7 +20,7 @@ class ActivitiesAdapter(private var activitiesList: List<String>, val aux:Activi
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ActivitiesViewHolder{
         val itemView: View =LayoutInflater.from(parent.context).inflate(R.layout.item_activities,parent,false)
 
-    return ActivitiesViewHolder(itemView, aux)
+    return ActivitiesViewHolder(itemView, activitiesInstance)
     }
 
     override fun onBindViewHolder(holder: ActivitiesViewHolder, position: Int) {

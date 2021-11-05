@@ -2,9 +2,8 @@ package com.example.integrador_android
 
 data class SuggestionResponse(var status: String,
     var activity: String,
-    var accessibility: Double,
     var type: String,
-    var price: Double,
+    var price: Double,  
 )
 
 /*

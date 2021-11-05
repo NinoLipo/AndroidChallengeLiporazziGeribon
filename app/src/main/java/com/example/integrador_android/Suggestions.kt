@@ -12,15 +12,17 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class Suggestions : AppCompatActivity() {
     private lateinit var binding: ActivitySuggestionsBinding
+    private var participantsNumber: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySuggestionsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val participantsNumber = intent.getIntExtra(getString(R.string.participantsNumber),1)
+        participantsNumber = intent.getIntExtra(getString(R.string.participantsNumber),1)
         val activityCategory = intent.getStringExtra(getString(R.string.hardCodedCategory))
         Log.println(Log.ERROR,"BANDERA","Linea 23")
+
         activityCategory?.let {
             Log.println(Log.ERROR,"BANDERA","Linea 25")
             searchActivityPerParticipants(participantsNumber, activityCategory )
@@ -42,9 +44,12 @@ class Suggestions : AppCompatActivity() {
             runOnUiThread{
                 if (apiRequest.isSuccessful){
                     val activityToShow: String = apiResponse?.activity ?: "No activities to suggest" //Ok?
-                    binding.textView2.text = activityToShow
-                    val queryToShow: String= apiResponse?.type ?: "No Type to suggest" //Ok?
-                    binding.textView6.text = queryToShow
+                    binding.textView6.text = activityToShow
+                    val typeToShow: String= apiResponse?.type ?: "No Type to suggest" //Ok?
+                    binding.textView2.text = typeToShow
+                    val priceToShow: String = apiResponse?.price.toString() ?: "No price to suggest"
+                    binding.tvActivityPrice.text = priceToShow
+                    binding.tvParticipantsQuantity.text = participantsNumber.toString()
                 }
             }
 

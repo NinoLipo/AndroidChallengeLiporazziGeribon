@@ -84,17 +84,17 @@
             tools:layout_editor_absoluteY="198dp" />
 
         <TextView
-            android:id="@+id/tvParticipantsView2"
+            android:id="@+id/priceView"
             android:layout_width="223dp"
             android:layout_height="66dp"
 
             android:layout_gravity="center_vertical|center"
-            android:text="@string/participants"
+            android:text="@string/priceview"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="70dp" />
 
         <TextView
-            android:id="@+id/tvParticipantsQuantity2"
+            android:id="@+id/tvActivityPrice"
             android:layout_width="88dp"
             android:layout_height="29dp"
             android:layout_gravity="center_vertical|right"

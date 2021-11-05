@@ -9,16 +9,16 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.integrador_android.databinding.ItemActivitiesBinding
 
-class ActivitiesViewHolder(itemView: View, aux: Activities): RecyclerView.ViewHolder(itemView), View.OnClickListener {
+class ActivitiesViewHolder(itemView: View, activitiesInstance: Activities): RecyclerView.ViewHolder(itemView), View.OnClickListener {
     private val binding = ItemActivitiesBinding.bind(itemView)
-   private val aux = aux
+   private val activitiesInstance = activitiesInstance
 
     init {
         itemView.setOnClickListener(this) /*this --> El viewholder*/
         binding.btSuggestionTrigger.setOnClickListener {
             /*Log.println(Log.WARN,"8888","btn")*/
-            val intent = Intent(aux.applicationContext, Suggestions::class.java)
-            aux.activityStarter(intent)
+            val intent = Intent(activitiesInstance.applicationContext, Suggestions::class.java)
+            activitiesInstance.activityStarter(intent)
         }
     }
 

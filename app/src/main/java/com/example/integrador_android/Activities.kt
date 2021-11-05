@@ -51,7 +51,8 @@ class Activities : AppCompatActivity() {
     }
 
     fun recyclerViewInit(){
-        adapter = ActivitiesAdapter(categoriesList,this)
+        adapter = ActivitiesAdapter(categoriesList,this) /*This Activities instance must arrive to ActivitiesView holder
+        to invoke activityStarter*/
 
         binding.rvActivities.layoutManager = LinearLayoutManager(this)
         binding.rvActivities.adapter = adapter
@@ -61,18 +62,5 @@ class Activities : AppCompatActivity() {
     fun activityStarter(intent: Intent){
         startActivity(intent)
     }
+}
 
-    }
-
-
-
-
-
-/*
-         //Iniciar el adaptador con la lista vacía
-        adapter = DogAdapter(imagenesPerros)
-
-        //Setear al recycler
-        binding.rvImagenesPerros.layoutManager = LinearLayoutManager(this)
-        binding.rvImagenesPerros.adapter = adapter
-*/
