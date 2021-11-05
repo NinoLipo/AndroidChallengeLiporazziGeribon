@@ -1,5 +1,6 @@
 package com.example.integrador_android
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -34,23 +35,36 @@ class Activities : AppCompatActivity() {
             val intents = Intent(this,Suggestions::class.java).also {
                 it.putExtra(getString(R.string.participantsNumber), participantsNumber)
                 it.putExtra(getString(R.string.hardCodedCategory), stringAux)
-
             }
             startActivity(intents)
         }
 
-        //btActivityTrigger.setOnclickListener
+        binding.rvActivities.setOnClickListener(){
+            val intents = Intent(this,Suggestions::class.java).also {
+                it.putExtra(getString(R.string.participantsNumber), participantsNumber)
+                it.putExtra(getString(R.string.hardCodedCategory), "ho")
+            }
+            startActivity(intents)
 
         }
 
+    }
+
     fun recyclerViewInit(){
-        adapter = ActivitiesAdapter(categoriesList)
+        adapter = ActivitiesAdapter(categoriesList,this)
 
         binding.rvActivities.layoutManager = LinearLayoutManager(this)
         binding.rvActivities.adapter = adapter
 
     }
-}
+
+    fun activityStarter(intent: Intent){
+        startActivity(intent)
+    }
+
+    }
+
+
 
 
 

@@ -1,20 +1,24 @@
 package com.example.integrador_android
 
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.integrador_android.databinding.ItemActivitiesBinding
 
-class ActivitiesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), View.OnClickListener {
+class ActivitiesViewHolder(itemView: View, aux: Activities): RecyclerView.ViewHolder(itemView), View.OnClickListener {
     private val binding = ItemActivitiesBinding.bind(itemView)
+   private val aux = aux
 
     init {
         itemView.setOnClickListener(this) /*this --> El viewholder*/
         binding.btSuggestionTrigger.setOnClickListener {
-            Log.println(Log.WARN,"8888","btn")
-            //val intent = Intent(this, Suggestions::class.java)
+            /*Log.println(Log.WARN,"8888","btn")*/
+            val intent = Intent(aux.applicationContext, Suggestions::class.java)
+            aux.activityStarter(intent)
         }
     }
 
@@ -27,17 +31,9 @@ class ActivitiesViewHolder(itemView: View): RecyclerView.ViewHolder(itemView), V
     }
 
 
+
 }
 
 interface OnItemClickListener{
     fun onItemClick()
 }
-
-/*
-class DogViewHolder(view: View): RecyclerView.ViewHolder(view) {
-    private val binding = ItemPerroBinding.bind(view)
-
-    fun bind(imagen: String) {
-        Picasso.get().load(imagen).into(binding.ivPerro)
-    }
-*/
