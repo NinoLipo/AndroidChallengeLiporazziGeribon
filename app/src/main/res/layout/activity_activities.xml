@@ -11,9 +11,10 @@
         android:layout_width="218dp"
         android:layout_height="30dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="52dp"
         android:text="@string/activitiesTitle"
         app:layout_constraintEnd_toStartOf="@+id/imRandom"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,13 +29,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <ImageView
+
+    <ImageButton
         android:id="@+id/imRandom"
         android:layout_width="58dp"
         android:layout_height="48dp"
+        android:background="@drawable/icon"
         app:layout_constraintBottom_toTopOf="@+id/rvActivities"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_launcher_background" />
+        app:layout_constraintTop_toTopOf="parent"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

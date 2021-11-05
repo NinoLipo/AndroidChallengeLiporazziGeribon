@@ -10,19 +10,21 @@
     <TextView
         android:id="@+id/textView6"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="128dp"
+        android:gravity="center"
         android:text="TextView"
-        android:textSize="16dp"
+        android:textSize="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="match_parent"
-        android:layout_height="137dp"
-        android:layout_marginTop="52dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,34 +36,32 @@
             android:layout_gravity="center_vertical|left"
             app:srcCompat="@drawable/ic_launcher_background"
             tools:layout_editor_absoluteX="63dp"
-            tools:layout_editor_absoluteY="198dp"
-            />
+            tools:layout_editor_absoluteY="198dp" />
 
         <TextView
             android:id="@+id/tvParticipantsView"
-            android:layout_width="223dp"
-            android:layout_height="66dp"
-            android:textSize="32dp"
+            android:layout_width="230dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical|center"
             android:text="@string/participants"
+            android:textSize="32dp"
             tools:layout_editor_absoluteX="161dp"
             tools:layout_editor_absoluteY="70dp" />
 
         <TextView
             android:id="@+id/tvParticipantsQuantity"
-            android:layout_width="88dp"
-            android:layout_height="29dp"
-            android:textSize="24dp"
+            android:layout_width="120dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical|right"
+            android:textSize="32dp"
             tools:layout_editor_absoluteX="178dp"
             tools:layout_editor_absoluteY="336dp" />
     </androidx.cardview.widget.CardView>
 
-
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
-        android:layout_height="137dp"
+        android:layout_height="128dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -69,8 +69,8 @@
         app:layout_constraintTop_toBottomOf="@+id/cardView">
 
         <ImageView
-            android:layout_width="65dp"
-            android:layout_height="70dp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical|left"
             app:srcCompat="@drawable/ic_launcher_background"
             tools:layout_editor_absoluteX="63dp"
@@ -78,8 +78,8 @@
 
         <TextView
             android:id="@+id/tvParticipantsView2"
-            android:layout_width="223dp"
-            android:layout_height="66dp"
+            android:layout_width="230dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical|center"
             android:text="@string/price"
             android:textSize="32dp"
@@ -88,25 +88,25 @@
 
         <TextView
             android:id="@+id/tvPrice"
-            android:layout_width="88dp"
-            android:layout_height="29dp"
+            android:layout_width="120dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical|right"
-            android:textSize="24dp"
+            android:textSize="32dp"
             tools:layout_editor_absoluteX="178dp"
             tools:layout_editor_absoluteY="336dp" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvCategoria"
-        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="137dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/btTryAnother"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.35">
+        app:layout_constraintVertical_bias="0.284">
 
         <ImageView
             android:layout_width="65dp"
@@ -118,8 +118,8 @@
 
         <TextView
             android:id="@+id/tvCategory"
-            android:layout_width="223dp"
-            android:layout_height="66dp"
+            android:layout_width="230dp"
+            android:layout_height="64dp"
             android:layout_gravity="center_vertical|center"
             android:text="@string/price"
             android:textSize="32dp"
