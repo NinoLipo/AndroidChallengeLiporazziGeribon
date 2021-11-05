@@ -18,18 +18,13 @@ class ActivitiesViewHolder(itemView: View, activitiesInstance: Activities): Recy
     init {
         binding.btSuggestionTrigger.setOnClickListener {
             val categorySelected = binding.tvActivityCategory.text.toString()
-            //val intent = Intent(activitiesInstance.applicationContext, Suggestions::class.java)
-
             activitiesInstance.activityStarter(categorySelected)
         }
     }
 
-
     fun bind(activityOption: String) {
         binding.tvActivityCategory.text = activityOption
     }
-
-
 
 }
 

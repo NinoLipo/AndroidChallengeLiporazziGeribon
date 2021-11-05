@@ -27,15 +27,15 @@ class Suggestions : AppCompatActivity() {
         var activityCategory = intent.getStringExtra(getString(R.string.hardCodedCategory))
         val randomOk = intent.getBooleanExtra(getString(R.string.random), false)
 
+        activityCategory?.let {
+            searchActivityPerParticipants(participantsNumber, activityCategory )
+            this.setTitle(activityCategory)
+        }
+
         //Check if call was from random buttom
         if(randomOk)  {
             //binding.cvCategoria.visibility = View.VISIBLE AGREGAR CARDVIEW DE CATEGORIA
             this.setTitle("Random")
-        }
-
-        activityCategory?.let {
-            searchActivityPerParticipants(participantsNumber, activityCategory )
-            this.setTitle(activityCategory)
         }
 
         binding.btTryAnother.setOnClickListener {

@@ -29,7 +29,6 @@ class Activities : AppCompatActivity() {
         participantsNumber = intent.getIntExtra(getString(R.string.participantsNumber),1)
         recyclerViewInit()
 
-
         binding.imRandom.setOnClickListener{
             val randomOk = true
             val randomCategory = categoriesList.random()
@@ -41,18 +40,14 @@ class Activities : AppCompatActivity() {
             startActivity(intents)
         }
 
-
-
         binding.rvActivities.setOnClickListener(){
             val intents = Intent(this,Suggestions::class.java).also {
                 val randomOk = false
                 it.putExtra(getString(R.string.participantsNumber), participantsNumber)
                 it.putExtra(getString(R.string.hardCodedCategory), "ho")
                 it.putExtra(getString(R.string.random),randomOk)
-
             }
             startActivity(intents)
-
         }
 
     }
@@ -63,7 +58,6 @@ class Activities : AppCompatActivity() {
 
         binding.rvActivities.layoutManager = LinearLayoutManager(this)
         binding.rvActivities.adapter = adapter
-
     }
 
     fun activityStarter(categorySelected : String){
