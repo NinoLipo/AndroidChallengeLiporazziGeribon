@@ -26,6 +26,7 @@ class Activities : AppCompatActivity() {
         val participantsNumber = intent.getIntExtra(getString(R.string.participantsNumber),1)
 
         recyclerViewInit()
+        this.setTitle("Activities")
 
         binding.imRandom.setOnClickListener{
             val randomOk = true

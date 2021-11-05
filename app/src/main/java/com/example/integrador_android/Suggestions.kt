@@ -3,6 +3,7 @@ package com.example.integrador_android
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.annotation.FloatRange
 import com.example.integrador_android.databinding.ActivitySuggestionsBinding
 import kotlinx.coroutines.CoroutineScope
@@ -23,15 +24,22 @@ class Suggestions : AppCompatActivity() {
 
         val participantsNumber = intent.getIntExtra(getString(R.string.participantsNumber), 1)
         var activityCategory = intent.getStringExtra(getString(R.string.hardCodedCategory))
-        val randomOk = intent.getBooleanArrayExtra(getString(R.string.random))
+        val randomOk = intent.getBooleanExtra(getString(R.string.random), false)
 
+        //Seteo visible el CardView de Categoria
+        if(randomOk)  {
+            binding.cvCategoria.visibility = View.VISIBLE
+            //cambiar titulo
+            this.setTitle("Random")
+        }
+
+        //Llamo a la API para obtener la actividad
         getActivity(participantsNumber, activityCategory)
 
+
         binding.btTryAnother.setOnClickListener {
-            randomOk.let {
-                activityCategory = categoriesList.random()
-                //cambiar titulo
-            }
+            if(randomOk) activityCategory = categoriesList.random()
+
             getActivity(participantsNumber,activityCategory)
         }
     }
@@ -52,7 +60,7 @@ class Suggestions : AppCompatActivity() {
 
             val llamada = getActivityRetroFit()
                 .create(APIService::class.java)
-                .giveMeActivity("activity?participants=$participants")
+                .giveMeActivity("activity?/participants=$participants&type=$category")
 
             //capturo los resultadps que me interesan
             val respuesta: RespuestaActivity? = llamada.body()

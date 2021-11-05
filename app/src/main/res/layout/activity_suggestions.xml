@@ -97,7 +97,8 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView3"
+        android:id="@+id/cvCategoria"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="137dp"
         app:layout_constraintBottom_toTopOf="@+id/btTryAnother"

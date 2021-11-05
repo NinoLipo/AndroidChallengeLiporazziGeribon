@@ -8,36 +8,46 @@
 
     <TextView
         android:id="@+id/tvAppName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:gravity="center"
         android:text="@string/title"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_primary"
+        android:textSize="64dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.051" />
 
     <TextView
         android:id="@+id/tvParticipants"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="92dp"
         android:text="@string/participants"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppName" />
+        app:layout_constraintTop_toBottomOf="@+id/tvAppName"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/etNumberParticipants"
-        android:inputType="numberSigned"
-        android:hint="1"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+
+        android:layout_marginTop="32dp"
+        android:hint="1"
+        android:inputType="numberSigned"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvParticipants" />
+        app:layout_constraintTop_toBottomOf="@+id/tvParticipants"
+        app:layout_constraintVertical_bias="0.008" />
 
     <Button
         android:id="@+id/btStart"
@@ -45,11 +55,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="44dp"
         android:text="@string/start"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etNumberParticipants"
-        />
+        app:layout_constraintVertical_bias="0.41" />
 
     <TextView
         android:id="@+id/tvTermsConditions"
@@ -59,7 +70,9 @@
         android:text="@string/termsconditions"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btStart" />
+        app:layout_constraintTop_toBottomOf="@+id/btStart"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

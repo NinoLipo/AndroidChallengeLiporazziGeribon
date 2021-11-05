@@ -11,27 +11,16 @@ import com.example.integrador_android.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity(), TextWatcher {
     private lateinit var binding: ActivityMainBinding
-    private var participantsNumber: Int = 4
+    private var participantsNumber: Int = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.etNumberParticipants.addTextChangedListener{
-            Log.println(Log.WARN,"PARTICIPANTES", participantsNumber.toString())
-            try{
-                afterTextChanged(it)
-                if (participantsNumber <= 0) {
-                    binding.btStart.isClickable= false
-                } else {
-                    binding.btStart.isClickable = true
-                }
-            } catch (e: NumberFormatException){
-                Log.println(Log.WARN,"PARTICIPANTES", "INGRESE ALGO")
-                //Poner Toast con alerta o TextView en el EditText
-            }
-        }
+        binding.btStart.isEnabled = false
+
+        binding.etNumberParticipants.addTextChangedListener(this)
 
         binding.btStart.setOnClickListener {
             val intentToActivities = Intent(this, Activities::class.java).also {
@@ -39,22 +28,35 @@ class MainActivity : AppCompatActivity(), TextWatcher {
             }
             startActivity(intentToActivities)
 
-           /* Log.println(Log.ASSERT,"GGGG","HOLAAAAA")*/
         }
 
     }
 
     override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        ValidateParticipants(p0)
     }
 
     override fun onTextChanged(p0: CharSequence?, start: Int, count: Int, after: Int) {
+        ValidateParticipants(p0)
     }
 
     override fun afterTextChanged(s: Editable?) {
-       participantsNumber = s.toString().toInt()
-        /*Log.println(Log.ASSERT,"HHHH", "AFTERTEXT")*/
-        /*Log.println(Log.ASSERT,"HHHH", editTextConverter)*/
+        ValidateParticipants(s)
 
     }
+
+    private fun ValidateParticipants(number : CharSequence?){
+        number?.let {
+            if(it.isNotEmpty()) {
+                participantsNumber = number.toString().toInt()
+                binding.btStart.isEnabled = participantsNumber >= 1
+            } else {
+                binding.btStart.isEnabled = false
+            }
+
+        }
+    }
+
+
 
 }
