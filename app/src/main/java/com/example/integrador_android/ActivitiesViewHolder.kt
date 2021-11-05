@@ -4,27 +4,26 @@ package com.example.integrador_android
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.provider.Settings.System.getString
 import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.example.integrador_android.databinding.ItemActivitiesBinding
+import androidx.appcompat.app.AppCompatActivity
 
-class ActivitiesViewHolder(itemView: View, activitiesInstance: Activities): RecyclerView.ViewHolder(itemView), View.OnClickListener {
+class ActivitiesViewHolder(itemView: View, activitiesInstance: Activities): RecyclerView.ViewHolder(itemView){
     private val binding = ItemActivitiesBinding.bind(itemView)
    private val activitiesInstance = activitiesInstance
 
     init {
-        itemView.setOnClickListener(this) /*this --> El viewholder*/
         binding.btSuggestionTrigger.setOnClickListener {
-            /*Log.println(Log.WARN,"8888","btn")*/
-            val intent = Intent(activitiesInstance.applicationContext, Suggestions::class.java)
-            activitiesInstance.activityStarter(intent)
+            val categorySelected = binding.tvActivityCategory.text.toString()
+            //val intent = Intent(activitiesInstance.applicationContext, Suggestions::class.java)
+
+            activitiesInstance.activityStarter(categorySelected)
         }
     }
 
-    override fun onClick(view: View?){
-        TODO()
-    }
 
     fun bind(activityOption: String) {
         binding.tvActivityCategory.text = activityOption
@@ -34,6 +33,3 @@ class ActivitiesViewHolder(itemView: View, activitiesInstance: Activities): Recy
 
 }
 
-interface OnItemClickListener{
-    fun onItemClick()
-}
