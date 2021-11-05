@@ -9,5 +9,7 @@
     <string name="tryanother">Try Another</string>
     <string name="tvActivityCategory">tvActivityCategory</string>
     <string name="hardCodedCategory">hardCodedCategory</string>
+    <string name="price">Price</string>
+    <string name="random">random</string>
 
 </resources>
